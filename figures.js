@@ -78,3 +78,21 @@ function calcularAreaCuadrado() {
     const area = areaCuadrado(value);
     alert(area);
 };
+
+//reto triangulo
+function alturaTriangulo(a, b) {
+    return Math.sqrt(Math.pow(a, 2) - (Math.pow(b, 2) / 4));
+    //return Math.sqrt((a * a) - ((b * b) / 4))
+};
+//console.log(alturaTriangulo(12, 9));
+
+function calcularAltura() {
+    const a = document.getElementById("trianguloA");
+    const valueA = a.value;
+
+    const b = document.getElementById("trianguloB");
+    const valueB = b.value;
+
+    const altura = alturaTriangulo(valueA, valueB);
+    alert(altura);
+};
