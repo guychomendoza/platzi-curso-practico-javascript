@@ -84,7 +84,6 @@ function alturaTriangulo(a, b) {
     return Math.sqrt(Math.pow(a, 2) - (Math.pow(b, 2) / 4));
     //return Math.sqrt((a * a) - ((b * b) / 4))
 };
-//console.log(alturaTriangulo(12, 9));
 
 function calcularAltura() {
     const a = document.getElementById("trianguloA");
@@ -93,6 +92,33 @@ function calcularAltura() {
     const b = document.getElementById("trianguloB");
     const valueB = b.value;
 
-    const altura = alturaTriangulo(valueA, valueB);
-    alert(altura);
+    const c = document.getElementById("trianguloC");
+    const valueC = c.value;
+
+    if (valueA == valueB || valueA == valueC || valueC == valueB) {
+        if (valueA < valueB && valueA < valueC) {
+            const baseTriangulo = valueA;
+            const ladoTriangulo = valueB;
+            const altura = alturaTriangulo(ladoTriangulo, baseTriangulo);
+            alert(altura);
+        }
+        else if (valueB < valueA && valueB < valueC) {
+            const baseTriangulo = valueB;
+            const ladoTriangulo = valueA;
+            const altura = alturaTriangulo(ladoTriangulo, baseTriangulo);
+            alert(altura);
+        }
+        else if (valueC < valueA && valueC < valueB) {
+            const baseTriangulo = valueC;
+            const ladoTriangulo = valueA;
+            const altura = alturaTriangulo(ladoTriangulo, baseTriangulo);
+            alert(altura);
+        };
+        
+    }
+    else {
+        alert("Tu triángulo no es isósceles")
+    }
+    
+    
 };
